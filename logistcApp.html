@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Lodge Logistics ...</title>
+    <link rel="stylesheet" href="logisticApp.css">
+</head>
+<body>
+    <header>
+        <h1>🚚 Tech Lodge Logistics . . .</h1>
+    </header>
+
+    <div class="scene-container">
+        <div class="road"></div>
+        <div class="road-line"></div>
+        <div id="selectedVehicle" class="vehicle">🏍️</div>
+    </div>
+
+    <div class="vehicle-selector">
+        <h2>Select Your Vehicle</h2>
+        <button onclick="selectVehicle('🏍️')">🏍️ Motorcycle</button>
+        <button onclick="selectVehicle('🚗')">🚗 Car</button>
+        <button onclick="selectVehicle('🚚')">🚚 Van</button>
+    </div>
+
+    <div class="controls">
+        <label for="speed">Adjust Animation Speed:</label>
+        <input type="range" id="speed" min="1" max="10" value="5" onchange="adjustSpeed(this.value)">
+    </div>
+
+    <div class="order-form">
+        <h2>Place Your Order</h2>
+        <form id="orderForm">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="address" placeholder="Delivery Address" required>
+            <select name="payment" required>
+                <option value="" disabled selected>Select Payment Mode</option>
+                <option value="credit_card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="cash_on_delivery">Cash on Delivery</option>
+            </select>
+            <textarea name="notes" placeholder="Additional Notes (optional)" rows="4"></textarea>
+            <button type="submit">Submit Order</button>
+            
+        </form>
+    </div>
+    <div>
+        <script src="logisticApp.js"></script>
+    </div>
+</html>
